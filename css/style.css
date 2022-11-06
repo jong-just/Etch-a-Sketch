@@ -1,0 +1,13 @@
+.gridSquare {
+    height: 20px;
+    width: 20px;
+    border: 1px solid red;
+}
+
+#container {
+    display: flex;
+}
+
+.hover {
+    background-color: green;
+}
