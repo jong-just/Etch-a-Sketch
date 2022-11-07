@@ -2,10 +2,17 @@ const container = document.querySelector("#container");
 const columns = [];
 const resetButton = document.querySelector("#reset");
 const rows = [];
-const grid = [];
-let res = prompt("How big you want it?", "");
+let width = 0;
+let height = 0;
 
-for (let i = 0; i < res; i++) {
+function getDimensions() {
+    width = prompt("How tall you want it?", "");
+    height = prompt("How wide you want it?", "");   
+}
+
+getDimensions();
+
+for (let i = 0; i < height; i++) {
     const pillar = document.createElement("div");
     pillar.setAttribute("id", `column${i}`);
 
@@ -14,24 +21,25 @@ for (let i = 0; i < res; i++) {
 
 
 resetButton.addEventListener("click", () => {
-    for (let j = 0; j < res; j++) {
-        for (let i = 0; i < res; i++) {
+    for (let j = 0; j < height; j++) {
+        for (let i = 0; i < width; i++) {
             document.getElementById(`gridSquare${j}_${i}`).classList.remove("hover"); 
         }
     }
+
 });
 
 function createColumns() {
 
-    for (let i = 0; i < res; i++) {
+    for (let i = 0; i < height; i++) {
         columns[i] = document.querySelector(`#column${i}`);
         columns[i].classList.add("grid");
     }
     return columns
 } createColumns();
 
-for (let j = 0; j < res; j++) {
-    for (let i = 0; i < res; i++) {
+for (let j = 0; j < height; j++) {
+    for (let i = 0; i < width; i++) {
         rows[i] = document.createElement("div");
         rows[i].setAttribute("id", `gridSquare${j}_${i}`);
         rows[i].classList.add("gridSquare");
@@ -41,8 +49,8 @@ for (let j = 0; j < res; j++) {
 
 }
 
-for (let j = 0; j < res; j++) {
-    for (let i = 0; i < res; i++) {
+for (let j = 0; j < height; j++) {
+    for (let i = 0; i < width; i++) {
         document.getElementById(`gridSquare${j}_${i}`).addEventListener("pointerover", () => {
             document.getElementById(`gridSquare${j}_${i}`).classList.add("hover");
         }); 
