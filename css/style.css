@@ -9,7 +9,7 @@ body {
 
 .gridSquare {
     display: flex;
-    border: 1px solid red;
+    border: 1px solid black;
     flex: 1;
 }
 
@@ -22,11 +22,11 @@ body {
 
 #container {
     display: flex;
-    height: 960px;
-    width: 960px;
-
+    height: 720px;
+    width: 720px;
+    border: 1px solid black;
 }
 
 .hover {
-    background-color: green;
+    background-color: black;
 }
