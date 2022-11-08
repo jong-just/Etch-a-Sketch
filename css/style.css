@@ -5,12 +5,14 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: lightgrey;
 }
 
 .gridSquare {
     display: flex;
     border: 1px solid black;
     flex: 1;
+    background-color: white;
 }
 
 .grid {
@@ -25,8 +27,36 @@ body {
     height: 720px;
     width: 720px;
     border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
 }
 
 .hover {
     background-color: black;
+}
+
+.buttons {
+    border: none;
+    font-size: 18px;
+    margin: 12px;
+    padding: 6px 12px;
+    background-color: goldenrod;
+    color: white;
+    transition-duration: .2s;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.buttons:hover {
+    background-color: white;
+    color: goldenrod;
+    cursor: pointer;
+    /* border: 2px solid goldenrod; */
+}
+
+#buttonHolder {
+    display: flex;
+    justify-content: center;
 }
