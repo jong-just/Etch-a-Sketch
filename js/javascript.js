@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const columns = [];
 const resetButton = document.querySelector("#reset");
+const resizeButton = document.querySelector("#resize");
 const rows = [];
 let width = 0;
 let height = 0;
@@ -20,6 +21,14 @@ function giveAttribute() {
 }
 
 resetButton.addEventListener("click", () => {
+    for (let j = 0; j < height; j++) {
+        for (let i = 0; i < width; i++) {
+            document.getElementById(`gridSquare${j}_${i}`).classList.remove("hover"); 
+        }
+    }
+});
+
+resizeButton.addEventListener("click", () => {
     for (let j = 0; j < height; j++) {
         for (let i = 0; i < width; i++) {
             document.getElementById(`gridSquare${j}_${i}`).classList.remove("hover"); 
